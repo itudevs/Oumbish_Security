@@ -45,4 +45,13 @@ function CloseMenu(){
     
     
 }
+//services code
+let Services=document.getElementById('Services');
+function CreateServices(){
+    Services.classList.add('hidden');
+}
+Services.addEventListener('click',  ()=> {
+    CreateServices();
+    console.log('Clicked: Simulates mouseover');
+});
     

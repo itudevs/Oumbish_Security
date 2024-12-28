@@ -123,11 +123,17 @@
 
       </section>
        <!--Show case indicating the services-->
-       <div class=" flex justify-center bg-gray-400 h-full w-full gap-x-12">
-         <div>Item 1</div>
-         <div>Item 1</div>
-         <div>Item 1</div>
+       <section class="relative" >
+       <div  class=" grid grid-cols-3 justify-center bg-gray-400   gap-x-3">
+          <div  class="bg-white" > <img class="h-30 w-30 aspect-square" src="./images/Services-img-1.jpeg" alt="Services-1">Item 1</div>
+         <div class="bg-white">Item 1</div>
+         <div class="bg-white">Item 1
+         </div>
+         <div onmouseover="CreateServices();" id="Services" class="absolute top-0 left-0 bottom-0 w-full h-full bg-black bg-opacity-50 z-10 flex items-center justify-center">
+          <p class="text-white"><i>Services</i></p>
+        </div>
        </div>
+      </section>
 
 
 
