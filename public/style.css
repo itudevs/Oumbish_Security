@@ -1047,6 +1047,11 @@ video {
      object-position: center;
 }
 
+.object-bottom {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
