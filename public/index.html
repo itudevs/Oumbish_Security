@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    
+    <title >Home</title>
     <link rel="stylesheet" href="./style.css">
+    <link class="rounded-full "  rel="shortcut icon" type="x-icon" href="./images/Oumbish-Logo-nav.jpeg">
 </head>
 <body>
     <!--Nav bar component from tailwind csss with few edits for this site-->
@@ -13,7 +15,7 @@
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
               <!-- Mobile menu button-->
-              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <button onclick="CloseMenu();" type="button" class="relative  inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="absolute -inset-0.5"></span>
                 <span class="sr-only">Open main menu</span>
                 <!--
@@ -29,7 +31,7 @@
       
                   Menu open: "block", Menu closed: "hidden"
                 -->
-                <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <svg   class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -38,7 +40,7 @@
               <div class="flex shrink-0 items-center">
                 <img class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Your Company">
               </div>
-              <div class="hidden sm:ml-6 sm:block">
+              <div  class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                   <a href="#" class="rounded-md bg-black px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
@@ -48,7 +50,7 @@
                 </div>
               </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div  class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">View notifications</span>
@@ -64,7 +66,7 @@
         </div>
       
         <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
+        <div class="sm:hidden hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="#" class="block rounded-md bg-black px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
@@ -120,7 +122,19 @@
 
 
       </section>
+       <!--Show case indicating the services-->
+       <div class=" flex justify-center bg-gray-400 h-full w-full gap-x-12">
+         <div>Item 1</div>
+         <div>Item 1</div>
+         <div>Item 1</div>
+       </div>
 
+
+
+
+
+       <!--Footer-->
+       <footer class="bg-red-600 h-12"></footer>
     <script src="./script.js"></script>  
 </body>
 </html>

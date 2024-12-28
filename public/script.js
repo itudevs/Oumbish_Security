@@ -5,7 +5,6 @@ console.log(totalslides);
 function next(){
  if (currentslide<totalslides){
     currentslide++;
-    console.log("hello");
     Showslide();
  }
 }
@@ -24,10 +23,26 @@ function Showslide(){
      const element = slides[i];
      if (currentslide===i+1){
         element.classList.remove('hidden');
-     console.log("hello");
      }else{
         element.classList.add('hidden'); 
      }
   }
+}
+//dropdown item code
+let dropdown=document.getElementById('mobile-menu');
+objDrop={
+    count:0
+}
+function CloseMenu(){
+       if (objDrop.count===0){
+        dropdown.classList.remove('hidden');
+        objDrop.count++;
+       }
+       else{
+        dropdown.classList.add('hidden');
+        objDrop.count--;
+       }
+    
+    
 }
     
