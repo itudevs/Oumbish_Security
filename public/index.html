@@ -6,7 +6,7 @@
     
     <title >Home</title>
     <link rel="stylesheet" href="./style.css">
-    <link class="rounded-full "  rel="shortcut icon" type="x-icon" href="./images/Oumbish-Logo-nav.jpeg">
+    <link class="object-cover"  rel="shortcut icon" type="x-icon" href="./images/web-logo.jpeg">
 </head>
 <body>
     <!--Nav bar component from tailwind csss with few edits for this site-->
@@ -38,7 +38,7 @@
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div class="flex shrink-0 items-center">
-                <img class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Your Company">
+                <a href="index.html"><img class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Oumbish Security"></a>
               </div>
               <div  class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
@@ -171,8 +171,52 @@
       </section>
        
         
+       <!--Installation of devices section-->
+        <section class="w-full min-h-screen overflow-hidden relative ">
+          <div class="w-full h-screen bg-cover bg-center" style="background-image: url('./images/Logo-nav.jpeg');">
+            <!-- Your content here -->
+          </div>
+       
+        <!--overlaying content-->
+        <div class="absolute top-0 left-0 bottom-0 right-0 z-10 bg-red-600 grid sm:grid-cols-1  md:grid-cols-3 justify-center items-center w-full opacity-75 rounded-lg">
+          <!-- Card 1 -->
+          <div class="w-full text-center">
+            <div class="w-32 h-32 mx-auto mb-4">
+              <img class="w-full h-full object-contain" src="./images/electric-fence-icon.png" alt="Services-1">
+            </div>
+            <p class="text-white font-bold text-sm">Installation Of Electric Fence</p>
+          </div>
+        
+          <!-- Card 2 -->
+          <div class="w-full  text-center">
+            <div class="w-32 h-32 mx-auto mb-4">
+              <img class="w-full h-full object-contain" src="./images/electric-fence-icon.png" alt="Services-2">
+            </div>
+            <p class="text-white font-bold text-sm">Installation Of Electric Fence</p>
+          </div>
+        
+          <!-- Card 3 -->
+          <div class="w-full  text-center">
+            <div class="w-32 h-32 mx-auto mb-4">
+              <img class="w-full h-full object-contain" src="./images/electric-fence-icon.png" alt="Services-3">
+            </div>
+            <p class="text-white font-bold text-sm">Installation Of Electric Fence</p>
+          </div>
+        </div>
+        
+          
+             
+           
 
 
+
+        </div>
+        
+         
+        </section>
+
+       
+       <!--Contact Us Section-->
 
        <!--Footer-->
       
