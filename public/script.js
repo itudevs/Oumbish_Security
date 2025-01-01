@@ -1,12 +1,17 @@
 let currentslide=1;
 let sliderElement=document.getElementById('slider');
 let totalslides=sliderElement.childElementCount;
-console.log(totalslides);
+
+
+ 
+
 function next(){
  if (currentslide<totalslides){
     currentslide++;
     Showslide();
- }
+     
+
+}
 }
 function prev(){
     
@@ -30,28 +35,37 @@ function Showslide(){
 }
 //dropdown item code
 let dropdown=document.getElementById('mobile-menu');
-objDrop={
-    count:0
+const objDrop = { count: 0 }; // Object to track the menu state
+
+function CloseMenu() {
+
+  if (objDrop.count === 0) {
+    // Show the menu
+    dropdown.classList.remove("hidden");
+    dropdown.classList.add("opacity-100", "scale-100");
+    dropdown.classList.remove("opacity-0", "scale-95");
+    objDrop.count++;
+  } else {
+    // Hide the menu with a timeout for smooth transition
+    dropdown.classList.add("opacity-0", "scale-95");
+    dropdown.classList.remove("opacity-100", "scale-100");
+    objDrop.count--;
+
+    // Delay hiding the menu completely to allow the transition to complete
+    setTimeout(() => {
+      if (objDrop.count === 0) dropdown.classList.add("hidden");
+    }, 300); // Match the duration of the transition (300ms)
+  }
 }
-function CloseMenu(){
-       if (objDrop.count===0){
-        dropdown.classList.remove('hidden');
-        objDrop.count++;
-       }
-       else{
-        dropdown.classList.add('hidden');
-        objDrop.count--;
-       }
-    
-    
-}
+
 //services code
 let Services=document.getElementById('Services');
 function CreateServices(){
-    Services.classList.add('hidden');
+  Services.classList.add('hidden');
 }
 Services.addEventListener('click',  ()=> {
     CreateServices();
+
     console.log('Clicked: Simulates mouseover');
 });
     
