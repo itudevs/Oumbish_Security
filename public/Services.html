@@ -38,7 +38,7 @@
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div class="flex shrink-0 items-center">
-                <a href="index.html"><img class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Oumbish Security"></a>
+                <a href="index.html"><img id="main-logo"class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Oumbish Security"></a>
               </div>
               <div  class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
@@ -53,6 +53,9 @@
             
           </div>
         </div>
+        <!--something-->
+
+      
       
         <!-- Mobile menu, show/hide based on menu state. -->
         <div class="sm:hidden hidden" id="mobile-menu">
@@ -67,92 +70,220 @@
       </nav>
     
 
-       <!--Show case indicating the services-->
-    <!--  <section  class="relative mt-1" >
-       <div  class=" grid  justify-center bg-white lg:grid-cols-3 sm:grid-cols-3  gap-2">
-        <div class="w-full h-auto rounded-2xl text-center  border-y-red-600 overflow-hidden">
-          <div class="w-full h-64">
-            <img class="w-full h-full object-cover" src="./images/Services-img-1.jpeg" alt="Services-1">
-          </div>
-          <h1 class="font-bold mt-4 text-lg">RETAIL GUARDING</h1>
-          <p class="mt-2 px-4 text-gray-600">
-            At Oumbish Security, we provide professional retail guarding services to safeguard your business, deter theft, and ensure a secure shopping experience for your customers. Our highly trained guards are vigilant, approachable, and committed to protecting your assets while enhancing the safety of your retail environment.
-          </p>
-         
-          </button>
-        </div>
+      <section  class="relative mt-1" >
+        <div  class=" grid  justify-center bg-white lg:grid-cols-3 sm:grid-cols-3  gap-2">
+         <div class="w-full h-auto rounded-2xl text-center  border-y-red-600 overflow-hidden">
+           <div class="w-full h-[80vh]">
+             <img class="w-full h-full object-cover" src="./images/Services-img-1.jpeg" alt="Services-1">
+           </div>
+           <h1 class="font-bold mt-4 text-lg">RETAIL GUARDING</h1>
+           <p class="mt-2 px-4 text-gray-600">
+             At Oumbish Security, we provide professional retail guarding services to safeguard your business, deter theft, and ensure a secure shopping experience for your customers. Our highly trained guards are vigilant, approachable, and committed to protecting your assets while enhancing the safety of your retail environment.
+           </p>
+           
+          <div id="modal-wrapper-1" class="fixed z-30 inset-0 hidden">
+            <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
         
-        <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
-          <div class="w-full h-64">
-            <img class="w-full h-full  object-cover overflow-hidden" src="./images/Services-img-2.jpeg" alt="Services-2">
-          </div>
-          <h1 class="font-bold mt-4 text-lg">PREMESIS AND SPECIAL EVENT GUARDING</h1>
-          <p class="mt-2 px-4 text-gray-600">
-            At Oumbish Security, we provide  reliable premises and special event guarding services to ensure the safety of your property and guests. Our professional guards are trained to manage crowds, prevent security breaches, and provide peace of mind for any occasion or venue
-          </p>
-          
-        </div>
-
-        <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
-          <div class="w-full h-64">
-            <img class="w-full h-full object-cover" src="./images/Services-img-3.jpeg" alt="Services-3">
-          </div>
-          <h1 class="font-bold mt-4 text-lg">CONSTRUTION SITE CAMP GUARDING</h1>
-          <p class="mt-2 px-4 text-gray-600">
-            At Oumbish Security provides dedicated construction site camp guarding to protect your assets, equipment, and workers. Our trained security personnel ensure 24/7 surveillance, prevent theft, and maintain a safe working environment, allowing your project to run smoothly and securely.
-          </p>
-       
-           </button>
-        </div>
-
-         
-        </div>
-       </div>
-      </section> -->
-       <!--Code im trying -->
-       <section class="services">
-        <!-- Service Buttons -->
-        <div class="flex space-x-4">
-          <button class="service-btn bg-blue-500 text-white px-4 py-2 rounded" onclick="openService(0)">Service 1</button>
-          <button class="service-btn bg-blue-500 text-white px-4 py-2 rounded" onclick="openService(1)">Service 2</button>
-          <button class="service-btn bg-blue-500 text-white px-4 py-2 rounded" onclick="openService(2)">Service 3</button>
-        </div>
-      
-        <!-- Service Pop-Up -->
-        <div id="servicePopup" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
-          <div class="bg-white w-11/12 max-w-lg rounded-lg shadow-lg relative">
-            <!-- Close Button -->
-            <button class="absolute top-2 right-2 bg-gray-500 text-white px-3 py-1 rounded" onclick="closeService()">Close</button>
-      
-            <!-- Service Content -->
-            <div class="p-4">
-              <h2 id="serviceTitle" class="text-2xl font-bold mb-4">Service Title</h2>
-              <div class="relative w-full h-64 overflow-hidden">
-                <!-- Slider -->
-                <ul id="serviceSlider" class="transition-transform duration-300 ease-in-out">
-                  <!-- Dynamic Slider Items -->
-                </ul>
-      
-                <!-- Navigation Buttons -->
-                <div class="absolute flex h-full w-full top-0 left-0">
-                  <div class="my-auto px-5 w-full flex justify-between">
-                    <button onclick="prevSlide()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                      </svg>
-                    </button>
-                    <button onclick="nextSlide()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                      </svg>
-                    </button>
+              <!-- Modal box -->
+              <div class="relative bg-white p-10 rounded w-2/3">
+                <section>
+                  <div class="relative w-full bg-white h-64 overflow-hidden">
+                    <ul id="slider" class="transition-transform duration-300 ease-in-out">
+                      <li class="h-[50vh] relative">
+                        <img class="h-full object-cover w-full p-2" src="./images/Slider-img-2.jpeg" alt="Slider Image 1">
+                      </li>
+                      <li class="h-[50vh] relative ">
+                        <img class="h-full object-contain w-full p-2" src="./images/Retail/R2.jpeg" alt="Slider Image 2">
+                      </li>
+                      <li class="h-[50vh] relative ">
+                        <img class="h-full object-contain w-full p-2" src="./images/Retail/R3.jpeg" alt="Slider Image 3">
+                      </li>
+                    </ul>
+        
+                    <div class="absolute flex h-full w-full top-0 left-0">
+                      <div class="my-auto px-5 w-full flex justify-between">
+                        <button onclick="prev();" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                          </svg>
+                        </button>
+                        <button onclick="next()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
                   </div>
+                </section>
+        
+                <!-- Modal overlay -->
+                <div id="Services-1" class="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center">
+                  <p class="text-white font-bold"><i>RETAIL GUARDING</i></p>
+                </div>
+        
+                <!-- Close button positioned below -->
+                <div class="w-full flex justify-center mt-4 ">
+                  
+                  <button onclick="Closeserviceimg(1);" class="bg-red-300 text-white font-bold py-2 px-3 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg mb-3">
+                    Close
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+          <button onclick="Showserviceimg(1);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">
+            View More
+          </button>
+         </div>
+         
+         <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
+           <div class="w-full h-[80vh]">
+             <img class="w-full h-full  object-cover overflow-hidden" src="./images/Services-img-2.jpeg" alt="Services-2">
+           </div>
+           <h1 class="font-bold mt-4 text-lg">PREMESIS AND SPECIAL EVENT GUARDING</h1>
+           <p class="mt-2 px-4 text-gray-600">
+             At Oumbish Security, we provide  reliable premises and special event guarding services to ensure the safety of your property and guests. Our professional guards are trained to manage crowds, prevent security breaches, and provide peace of mind for any occasion or venue
+           </p>
+           
+          <div id="modal-wrapper-2" class="fixed z-30 inset-0 hidden">
+            <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
+        
+              <!-- Modal box -->
+              <div class="relative bg-white p-10 rounded w-2/3">
+                <section>
+                  <div class="relative w-full bg-white h-64 overflow-hidden">
+                    <ul id="slider" class="transition-transform duration-300 ease-in-out">
+                      <li class="h-[50vh] relative">
+                        <img class="h-full object-cover w-full p-2" src="./images/Slider-img-2.jpeg" alt="Slider Image 1">
+                      </li>
+                      <li class="h-[50vh] relative hidden">
+                        <img class="h-full object-cover w-full p-2" src="./images/Slider-img-3.jpeg" alt="Slider Image 2">
+                      </li>
+                      <li class="h-[50vh] relative hidden">
+                        <img class="h-full object-cover w-full p-2" src="./images/Slider-img-4.jpeg" alt="Slider Image 3">
+                      </li>
+                    </ul>
+        
+                    <div class="absolute flex h-full w-full top-0 left-0">
+                      <div class="my-auto px-5 w-full flex justify-between">
+                        <button onclick="prev();" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                          </svg>
+                        </button>
+                        <button onclick="next()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+        
+                <!-- Modal overlay -->
+                <div id="Services-2" class="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center">
+                  <p class="text-white font-bold"><i>PREMESIS AND SPECIAL EVENT GUARDING</i></p>
+                </div>
+        
+                <!-- Close button positioned below -->
+                <div class="w-full flex justify-center mt-4 ">
+                  
+                  <button onclick="Closeserviceimg(2);" class="bg-red-300 text-white font-bold py-2 px-3 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg mb-3">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onclick="Showserviceimg(2);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">
+            View More
+          </button>
+        
+         </div>
+ 
+         <div class="w-full h-auto rounded-2xl text-center overflow-hidden">
+          <div class="w-full h-[80vh]">
+            <img class="w-full h-full object-cover" src="./images/Services-img-3.jpeg" alt="Services-3">
+          </div>
+          <h1 class="font-bold mt-4 text-lg">CONSTRUCTION SITE CAMP GUARDING</h1>
+          <p class="mt-2 px-4 text-gray-600">
+            At Oumbish Security provides dedicated construction site camp guarding to protect your assets, equipment, and workers. Our trained security personnel ensure 24/7 surveillance, prevent theft, and maintain a safe working environment, allowing your project to run smoothly and securely.
+          </p>
+          
+        
+          <div id="modal-wrapper-3" class="fixed z-30 inset-0 hidden">
+
+
+
+
+
+
+
+
+
+            <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
+        
+              <!-- Modal box -->
+              <div class="relative bg-white p-10 rounded w-2/3">
+                <section>
+                  <div class="relative w-full bg-white h-64 overflow-hidden">
+                    <ul id="slider" class="transition-transform duration-300 ease-in-out">
+                      <li class="h-[50vh] relative">
+                        <img class="h-full object-cover w-full p-2" src="./images/Slider-img-2.jpeg" alt="Slider Image 1">
+                      </li>
+                      <li class="h-[50vh] relative hidden">
+                        <img class="h-full object-cover w-full p-2" src="./images/Slider-img-3.jpeg" alt="Slider Image 2">
+                      </li>
+                      <li class="h-[50vh] relative hidden">
+                        <img class="h-full object-cover w-full p-2" src="./images/Slider-img-4.jpeg" alt="Slider Image 3">
+                      </li>
+                    </ul>
+        
+                    <div class="absolute flex h-full w-full top-0 left-0">
+                      <div class="my-auto px-5 w-full flex justify-between">
+                        <button onclick="prev();" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                          </svg>
+                        </button>
+                        <button onclick="next()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+        
+                <!-- Modal overlay -->
+                <div id="Services-3" class="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center">
+                  <p class="text-white font-bold"><i>CONSTRUCTION SITE CAMP GUARDING</i></p>
+                </div>
+        
+                <!-- Close button positioned below -->
+                <div class="w-full flex justify-center mt-4 ">
+                  
+                  <button onclick="Closeserviceimg(3);" class="bg-red-300 text-white font-bold py-2 px-3 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg mb-3">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="Showserviceimg(3);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">
+            View More
+          </button>
         </div>
-      </section>
+        
+         
+          
+         </div>
+        </div>
+       </section>
       
        <!--Installation of devices section-->
         <section class="w-full min-h-screen overflow-hidden relative "> 
@@ -161,7 +292,7 @@
           </div>
        
         <!--overlaying content-->
-        <div class="absolute top-0 left-0 bottom-0 right-0 z-10 bg-red-600 grid sm:grid-cols-1  md:grid-cols-3 justify-center items-center w-full opacity-75 rounded-lg">
+        <div class="absolute top-0 left-0 bottom-0 right-0 z-10 bg-red-600 grid sm:grid-cols-1  md:grid-cols-3 lg:grid-cols-4 justify-center items-center w-full opacity-75 rounded-lg h-screen">
           <!-- Card 1 -->
           <div class="w-full text-center">
             <div class="w-32 h-32 mx-auto mb-4">
@@ -185,6 +316,15 @@
             </div>
             <p class="text-white font-bold text-sm">Installation Of Electric Gate</p>
           </div>
+
+           <!-- Card 4 -->
+           <div class="w-full text-center">
+            <div class="w-32 h-32 mx-auto mb-4">
+              <img class="w-full h-full object-contain" src="./images/garage-door-icon.png" alt="electric-garage-door-icon">
+            </div>
+            <p class="text-white font-bold text-sm">Installation Of Electric Garage Door</p>
+          </div>
+        
         </div>
         
           
@@ -214,73 +354,15 @@
                    
                 </div>
             </div>
-            <div class="flex  items-center justify-center">
-                <div class="grid md:grid-cols-2">
-                    <div class="h-full pr-6">
-                        <p class="mt-3 mb-12 text-lg text-gray-600 0">
-                          "Get in touch with Oumbish Security today for reliable, professional security services. Our team is available to discuss your needs and provide tailored solutions to keep your property safe and secure. Contact us now for a consultation.
-                        </p>
-                        <ul class="mb-6 md:mb-0 ">
-                            <li class="flex">
-                                <div class="flex h-10 w-10 items-center justify-center rounded bg-red-700 text-gray-50">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="h-6 w-6">
-                                        <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
-                                        <path
-                                            d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4 mb-4">
-                                    <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 ">Our Address
-                                    </h3>
-                                    <p class="text-gray-600 dark:text-slate-400">16 A Bok Street </p>
-                                    <p class="text-gray-600 dark:text-slate-400">Polokwane</p>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="flex h-10 w-10 items-center justify-center rounded bg-red-700 text-gray-50">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="h-6 w-6">
-                                        <path
-                                            d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2">
-                                        </path>
-                                        <path d="M15 7a2 2 0 0 1 2 2"></path>
-                                        <path d="M15 3a6 6 0 0 1 6 6"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4 mb-4">
-                                    <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 ">Contact
-                                    </h3>
-                                    <p class="text-gray-600 dark:text-slate-400">Mobile: +27 (81) 371-1015</p>
-                                    <p class="text-gray-600 dark:text-slate-400">Mail: bishopbuzana@gmail.com</p>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="flex h-10 w-10 items-center justify-center rounded bg-red-700 text-gray-50">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="h-6 w-6">
-                                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                                        <path d="M12 7v5l3 3"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4 mb-4">
-                                    <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 ">Working
-                                        hours</h3>
-                                    <p class="text-gray-600 ">Monday - Sunday: 08:00 - 17:00</p>
-                                    
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                </div>
+            <div class="flex justify-center items-center">
+              <a href="index.html#contact">
+                <button   class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">Contact</button>
+              </a> 
             </div>
-        </div>
-    </section>
+                 
+                            
+              
+          </section>
        <!--Footer-->
       
 

@@ -1,9 +1,13 @@
 let currentslide=1;
 let sliderElement=document.getElementById('slider');
 let totalslides=sliderElement.childElementCount;
+console.log(sliderElement)
+if ( sliderElement===null)
+{
 
-
- 
+}else{
+   let totalslides=sliderElement.childElementCount;
+}
 
 function next(){
  if (currentslide<totalslides){
@@ -38,7 +42,7 @@ let dropdown=document.getElementById('mobile-menu');
 const objDrop = { count: 0 }; // Object to track the menu state
 
 function CloseMenu() {
-
+   console.log(typeof(objDrop));
   if (objDrop.count === 0) {
     // Show the menu
     dropdown.classList.remove("hidden");
@@ -59,13 +63,56 @@ function CloseMenu() {
 }
 
 //services code
-let Services=document.getElementById('Services');
-function CreateServices(){
+
+function CreateServices(index){
+   let Services=document.getElementById(`Services-${index}`);
   Services.classList.add('hidden');
-}
-Services.addEventListener('click',  ()=> {
-    CreateServices();
+
+  Services.addEventListener('click',  (index)=> {
+   
+   CreateServices(index);
 
     console.log('Clicked: Simulates mouseover');
 });
+}
+
+
+
+
+
+function Showserviceimg(index){
+   const Serv=document.getElementById(`Services-${index}`);
+   console.log(Serv);
+   const PopUp=document.getElementById(`modal-wrapper-${index}`);
+   console.log(PopUp);
+    PopUp.classList.remove('hidden');
+   
+    Serv.classList.remove('hidden');
+
+    Serv.addEventListener('click',  ()=> {
+   
+      Serv.classList.add('hidden');
+   
+       console.log('Clicked: Simulates mouseover');
+   });
+   console.log(Serv);
+   
+};
+function Closeserviceimg(index){
+   const PopUp=document.getElementById(`modal-wrapper-${index}`);
+   PopUp.classList.add('hidden');
+
+};
+const image = document.querySelector('img');
+
+const elements = document.querySelectorAll(':not(img #main-logo');
+
+// Add a class to all elements except the excluded one
+elements.forEach(element => {
+   elements.style.height = `${image.naturalHeight / image.naturalWidth * 100}vh`;
+});
+
+ 
+
+
     

@@ -73,7 +73,7 @@
 
         
             <ul id="slider" class=" transition-transform duration-300 ease-in-out" >
-              <li class="h-[50vh] relative">
+              <li class="h-screen relative">
                 <img class="h-full object-cover w-full p-2" src="./images/Slider-img-2.jpeg" alt="Slider Image 1" >
             
               </li>
@@ -117,7 +117,7 @@
        <section  class="relative mt-1" >
        <div  class=" grid  justify-center bg-white lg:grid-cols-3 sm:grid-cols-3  gap-2">
         <div class="w-full h-auto rounded-2xl text-center  border-y-red-600 overflow-hidden">
-          <div class="w-full h-64">
+          <div class="w-full h-[80vh]">
             <img class="w-full h-full object-cover" src="./images/Services-img-1.jpeg" alt="Services-1">
           </div>
           <h1 class="font-bold mt-4 text-lg">RETAIL GUARDING</h1>
@@ -130,7 +130,7 @@
         </div>
         
         <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
-          <div class="w-full h-64">
+          <div class="w-full h-[80vh]">
             <img class="w-full h-full  object-cover overflow-hidden" src="./images/Services-img-2.jpeg" alt="Services-2">
           </div>
           <h1 class="font-bold mt-4 text-lg">PREMESIS AND SPECIAL EVENT GUARDING</h1>
@@ -143,7 +143,7 @@
         </div>
 
         <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
-          <div class="w-full h-64">
+          <div class="w-full h-[80vh]">
             <img class="w-full h-full object-cover" src="./images/Services-img-3.jpeg" alt="Services-3">
           </div>
           <h1 class="font-bold mt-4 text-lg">CONSTRUTION SITE CAMP GUARDING</h1>
@@ -155,8 +155,8 @@
            </button>
         </div>
 
-         <div onmouseover="CreateServices();" id="Services" class="absolute top-0 left-0 bottom-0 w-full h-full bg-black bg-opacity-50 z-10 flex items-center justify-center rounded-lg">
-          <p class="text-white"><i>Services</i></p>
+         <div onmouseover="CreateServices(0);" id="Services-0" class="absolute top-0 left-0 bottom-0 w-full h-full bg-black bg-opacity-50 z-10 flex items-center justify-center rounded-lg">
+          <p class="text-white font-bold "><i>SERVIICES</i></p>
         </div>
        </div>
       </section>
@@ -208,8 +208,9 @@
 
        
        <!--Contact Us Section-->
-       <section class="bg-white flex justify-center" id="contact">
-        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+       <section class="bg-white flex justify-center items-center" id="contact">
+        <div class="flex justify-center items-center">
+          <div class=" mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <div class="mb-4">
                 <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
                     <p class="text-base font-semibold uppercase tracking-wide text-red-600 ">
@@ -287,6 +288,7 @@
                     
                 </div>
             </div>
+        </div>
         </div>
     </section>
        <!--Footer-->
