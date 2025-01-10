@@ -1,4 +1,4 @@
-let currentslide=1;
+var currentslide=1;
 var totalslides;
 var sliderElement;
 var sliderInterval; 
@@ -20,6 +20,9 @@ function prev(index){
     Showslide(index);
  }
 }
+function setDef(){
+   currentslide=1;
+}
 
 function Showslide(index){
  if (index===0){
@@ -33,12 +36,18 @@ function Showslide(index){
   for (let i = 0; i < totalslides; i++) {
      const element = slides[i];
      if (currentslide===i+1){
-        element.classList.remove('hidden');
-        element.classList.add('opacity-100');
-            element.classList.remove('opacity-0');
+       
+      element.classList.remove('hidden');
+      element.style.transform = 'translateX(0)';
+      element.style.opacity = '1';
+    //   element.style.zIndex = '1';
+      element.style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
      }else{
-      element.classList.add('opacity-0');
-      element.classList.remove('opacity-100');
+      const offset = i < currentslide - 1 ? -100 : 100; // Determine direction
+      element.style.transform = `translateX(${offset}%)`; // Make next slide partially visible
+      element.style.opacity = '0';
+     // element.style.zIndex = '0';
+      element.style.transition = 'transform 0.7s ease-in-out, opacity 0.7s ease-in-out';
       if (index===0){
       setTimeout(() => element.classList.add('hidden'), 700);}
       else{
@@ -54,12 +63,23 @@ function startSlider(index, interval = 3000) {
  }
 
  startSlider(0);
-//dropdown item code
+//dropdown item code 
 let dropdown=document.getElementById('mobile-menu');
-const objDrop = { count: 0 }; // Object to track the menu state
+const isDropdownVisible = dropdown.classList.contains('hidden') ? 'hidden' : 'visible';
+sessionStorage.setItem("dropdownState", isDropdownVisible);
+var objDrop = {count:0 }; // Object to track the menu state
+sessionStorage.setItem("objDrop", JSON.stringify({ count: 0 }));
 
 function CloseMenu() {
-   console.log(typeof(objDrop));
+   const objDrop = JSON.parse(sessionStorage.getItem("objDrop"));
+   console.log(objDrop);
+   const savedState = sessionStorage.getItem("dropdownState");
+if (savedState === 'hidden') {
+    dropdown.classList.add('hidden');
+} else {
+    dropdown.classList.remove('hidden');
+}
+   console.log(dropdown);
   if (objDrop.count === 0) {
     // Show the menu
     dropdown.classList.remove("hidden");
@@ -118,7 +138,10 @@ function Showserviceimg(index){
 function Closeserviceimg(index){
    const PopUp=document.getElementById(`modal-wrapper-${index}`);
    PopUp.classList.add('hidden');
-
+   
+   for (let i =0;i<currentslide;i++) {
+      prev(index);
+   }
 };
 const image = document.querySelector('img');
 
