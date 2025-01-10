@@ -1,32 +1,34 @@
 let currentslide=1;
-let sliderElement=document.getElementById('slider');
-let totalslides=sliderElement.childElementCount;
-console.log(sliderElement)
-if ( sliderElement===null)
-{
+var totalslides;
+var sliderElement;
 
-}else{
-   let totalslides=sliderElement.childElementCount;
-}
 
-function next(){
- if (currentslide<totalslides){
+function next(index){
+   
+ if (currentslide<3){
     currentslide++;
-    Showslide();
+    Showslide(index);
      
 
 }
 }
-function prev(){
+function prev(index){
     
  if (currentslide>1){
     currentslide--;
     
-    Showslide();
+    Showslide(index);
  }
 }
 
-function Showslide(){
+function Showslide(index){
+ if (index===0){
+    sliderElement=document.getElementById('slider');
+}else{
+    sliderElement=document.getElementById(`slider-${index}`);
+}
+ totalslides=sliderElement.childElementCount;
+ console.log(totalslides)
  const slides=sliderElement.getElementsByTagName('li');
   for (let i = 0; i < totalslides; i++) {
      const element = slides[i];
@@ -111,6 +113,7 @@ const elements = document.querySelectorAll(':not(img #main-logo');
 elements.forEach(element => {
    elements.style.height = `${image.naturalHeight / image.naturalWidth * 100}vh`;
 });
+
 
  
 
