@@ -1,7 +1,7 @@
 let currentslide=1;
 var totalslides;
 var sliderElement;
-
+var sliderInterval; 
 
 function next(index){
    
@@ -34,11 +34,22 @@ function Showslide(index){
      const element = slides[i];
      if (currentslide===i+1){
         element.classList.remove('hidden');
+        element.classList.add('opacity-100');
+            element.classList.remove('opacity-0');
      }else{
-        element.classList.add('hidden'); 
+      element.classList.add('opacity-0');
+      element.classList.remove('opacity-100');
+      setTimeout(() => element.classList.add('hidden'), 700); 
      }
   }
+  currentslide = (currentslide % totalslides) + 1
 }
+function startSlider(index, interval = 3000) {
+   Showslide(index); // Show the first slide
+   sliderInterval = setInterval(() => Showslide(index), interval); // Auto-play every `interval` ms
+ }
+
+ startSlider(0);
 //dropdown item code
 let dropdown=document.getElementById('mobile-menu');
 const objDrop = { count: 0 }; // Object to track the menu state
