@@ -39,10 +39,14 @@ function Showslide(index){
      }else{
       element.classList.add('opacity-0');
       element.classList.remove('opacity-100');
-      setTimeout(() => element.classList.add('hidden'), 700); 
+      if (index===0){
+      setTimeout(() => element.classList.add('hidden'), 700);}
+      else{
+         element.classList.add('hidden') 
+      } 
      }
   }
-  currentslide = (currentslide % totalslides) + 1
+ if (index===0){ currentslide = (currentslide % totalslides) + 1;}
 }
 function startSlider(index, interval = 3000) {
    Showslide(index); // Show the first slide
