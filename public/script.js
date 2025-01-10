@@ -33,6 +33,7 @@ function Showslide(index){
  totalslides=sliderElement.childElementCount;
  console.log(totalslides)
  const slides=sliderElement.getElementsByTagName('li');
+
   for (let i = 0; i < totalslides; i++) {
      const element = slides[i];
      if (currentslide===i+1){
