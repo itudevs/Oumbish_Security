@@ -65,7 +65,23 @@
           </div>
         </div>
       </nav>
-      
+      <!--team section introduction-->
+      <section>
+        <h1  class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl flex justify-center items-center">Our Team</h1>
+        <!--Images of 3 main memeber s of the company-->
+        <div class="flex justify-center items-center gap-9">
+          <div class="">
+            <img class="rounded-full resize-image" src="images/Main-Member/Mogwana.jpeg" alt="Member1">
+          </div>
+          <div>
+            <img class="rounded-full resize-image" src="images/Main-Member/Ndzalama.jpeg" alt="Member2">
+          </div>
+          <div>
+            <img class="rounded-full resize-image" src="images/Main-Member/Matimba.jpeg" alt="Member3">
+          </div>
+        </div>
+        
+      </section>
        <!--Contact Us Section-->
        <section class="bg-white flex justify-center" id="contact">
         <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -129,6 +145,19 @@
   </div>
 </footer>
 
-    <script src="./script.js"></script>  
+    <script src="./script.sjs">
+       // Function to resize all images
+  function resizeImages(width, height) {
+    const images = document.querySelectorAll('.resize-image');
+    images.forEach((img) => {
+      img.style.width = `${width}px`;
+      img.style.height = `${height}px`;
+      img.style.objectFit = 'cover'; // Maintain aspect ratio while filling the container
+    });
+  }
+
+  // Call the function with desired dimensions
+  resizeImages(150, 150);
+    </script>  
 </body>
 </html>
