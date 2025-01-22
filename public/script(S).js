@@ -152,6 +152,15 @@ const image = document.querySelector('img');
 const elements = document.querySelectorAll(':not(img #main-logo');
 
 // Add a class to all elements except the excluded one
-elements.forEach(element => {
-   elements.style.height = `${image.naturalHeight / image.naturalWidth * 100}vh`;
-});
+
+if (image.complete) {
+   elements.forEach(() => {
+       elements.style.height = `${image.naturalHeight / image.naturalWidth * 100}vh`;
+   });
+} else {
+   image.onload = function () {
+       elements.forEach(() => {
+           elements.style.height = `${image.naturalHeight / image.naturalWidth * 100}vh`;
+       });
+   };
+}
