@@ -149,12 +149,12 @@ if (savedState === 'hidden') {
 }
 const image = document.querySelector('img');
 
-const elements = document.querySelectorAll(':not(img #main-logo');
+const elements = document.querySelectorAll(':not(#main-logo)');
 
 // Add a class to all elements except the excluded one
 
 if (image.complete) {
-   elements.forEach(() => {
+   elements.forEach(()=> {
        elements.style.height = `${image.naturalHeight / image.naturalWidth * 100}vh`;
    });
 } else {

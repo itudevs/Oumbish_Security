@@ -69,20 +69,20 @@
       <section  >
 
         <div  >
-          <div class="relative w-full h-64 overflow-hidden rounded-s-sm  ">
+          <div class="relative w-full h-64   overflow-hidden  rounded-s-sm  ">
 
         
-            <ul id="slider" class=" transition-transform duration-300 ease-in-out  " >
-              <li class="h-screen relative">
-                <img class="h-full  round-lg object-cover w-full  p-2" src="./images/Slider-img-2.jpeg" alt="Slider Image 1" >
-            
-              </li>
-              <li class="h-[50vh] relative hidden">
-                <img class="h-full object-cover w-full p-2" src="./images/Slider-img-3.jpeg" alt="Slider Image 1" >
+            <ul id="slider" class="   transition-transform duration-300 ease-in-out rounded-lg " >
+              <li class="h-[80vh]  relative p-2">
+                <img class="h-full  border-2 rounded-xl shadow-lg object-cover w-full " src="./images/Slider-img-2.jpeg" alt="Slider Image 1" >
             
               </li>
               <li class="h-[50vh] relative hidden p-2">
-                <img class="h-full object-cover w-full" src="./images/Slider-img-4.jpeg" alt="Slider Image 1" >
+                <img class="h-full border-2 rounded-lg  shadow-lg object-cover w-full " src="./images/Slider-img-3.jpeg" alt="Slider Image 2" >
+            
+              </li>
+              <li class="h-[80vh] relative hidden p-2">
+                <img class="h-full border-2 rounded-lg shadow-lg   object-cover w-full" src="./images/Slider-img-4.jpeg" alt="Slider Image 3" >
             
               </li>
             </ul>
@@ -90,7 +90,7 @@
 
 
             <div id="dots" class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              <div class="dot w-3 h-3 bg-gray-500 rounded-full cursor-pointer z-10" onclick="goToSlide(1)"></div>
+              <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer z-10" onclick="goToSlide(1)"></div>
               <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="goToSlide(2)"></div>
               <div class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="goToSlide(3)"></div>
           </div>
@@ -101,11 +101,11 @@
       
       </section >
        <!--Show case indicating the services-->
-       <section  class="relative mt-1" >
-       <div  class=" grid  justify-center bg-white lg:grid-cols-3 sm:grid-cols-3  gap-2">
-        <div class="w-full h-auto rounded-2xl text-center  border-y-red-600 overflow-hidden">
+       <section  class="relative mt-1 bg-white" >
+       <div  class=" grid  justify-center  lg:grid-cols-3 sm:grid-cols-1 sm:gap-5  gap-4">
+        <div class="w-full p-4 h-auto rounded-lg text-center   overflow-hidden">
           <div class="w-full h-[80vh]">
-            <img class="w-full h-full object-cover" src="./images/Services-img-1.jpeg" alt="Services-1">
+            <img class="w-full rounded-lg h-full object-cover" src="./images/Services-img-1.jpeg" alt="Services-1">
           </div>
           <h1 class="font-bold mt-4 text-lg md:mt-5">RETAIL GUARDING</h1>
           <p class="mt-2 px-4 text-gray-600">
@@ -116,9 +116,9 @@
           </button>
         </div>
         
-        <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
+        <div class="w-full p-4 h-auto rounded-2xl text-center   overflow-hidden">
           <div class="w-full h-[80vh]">
-            <img class="w-full h-full  object-cover overflow-hidden" src="./images/Services-img-2.jpeg" alt="Services-2">
+            <img class="w-full rounded-lg h-full  object-cover overflow-hidden" src="./images/Services-img-2.jpeg" alt="Services-2">
           </div>
           <h1 class="font-bold mt-4 text-lg ">PREMESIS AND SPECIAL EVENT GUARDING</h1>
           <p class="mt-2 px-4 text-gray-600">
@@ -129,9 +129,9 @@
            </button>
         </div>
 
-        <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
+        <div class="w-full p-4 h-auto rounded-2xl text-center   overflow-hidden">
           <div class="w-full h-[80vh]">
-            <img class="w-full h-full object-cover" src="./images/Services-img-3.jpeg" alt="Services-3">
+            <img class="w-full rounded-lg h-full object-cover" src="./images/Services-img-3.jpeg" alt="Services-3">
           </div>
           <h1 class="font-bold mt-4 text-lg">CONSTRUTION SITE CAMP GUARDING</h1>
           <p class="mt-2 px-4 text-gray-600">
@@ -143,14 +143,14 @@
         </div>
 
          <div onmouseover="CreateServices(0);" id="Services-0" class="absolute top-0 left-0 bottom-0 w-full h-full bg-black bg-opacity-50 z-10 flex items-center justify-center rounded-lg">
-          <p class="text-white font-bold "><i>SERVIICES</i></p>
+          <p class="text-white p-4 font-bold "><i>SERVIICES</i></p>
         </div>
        </div>
       </section>
        
         
        <!--Installation of devices section-->
-        <section class="w-full min-h-screen overflow-hidden relative ">
+        <section class="w-full min-h-screen p-4 overflow-hidden relative ">
           <div class="w-full h-screen bg-cover bg-center" style="background-image: url('./images/Logo-nav.jpeg');">
             <!-- Your content here -->
           </div>
@@ -196,7 +196,7 @@
        
        
        <!-- Contact Us Section -->
-<section class="bg-white flex justify-center items-center" id="contact">
+<section class="bg-white  flex justify-center items-center" id="contact">
         <div class="flex justify-center items-center">
           <div class=" mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
     <div class="mb-4">
@@ -211,7 +211,7 @@
                    
       </div>
     </div>
-            <div class="flex  items-center justify-center">
+            <div class="flex  flex-row items-center justify-center">
                 <div class="grid md:grid-cols-2">
                     <div class="h-full pr-6">
                         <p class="mt-3 mb-12 text-lg text-gray-600 0">
@@ -232,8 +232,8 @@
                                 <div class="ml-4 mb-4">
                                     <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 ">Our Address
                                     </h3>
-                                    <p class="text-gray-600 dark:text-slate-400">16 A Bok Street </p>
-                                    <p class="text-gray-600 dark:text-slate-400">Polokwane</p>
+                                    <p class="text-gray-600 ">16 A Bok Street </p>
+                                    <p class="text-gray-600 ">Polokwane</p>
           </div>
         </li>
                             <li class="flex">
@@ -251,8 +251,8 @@
                                 <div class="ml-4 mb-4">
                                     <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 ">Contact
                                     </h3>
-                                    <p class="text-gray-600 dark:text-slate-400">Mobile: +27 (81) 371-1015</p>
-                                    <p class="text-gray-600 dark:text-slate-400">Mail: bishopbuzana@gmail.com</p>
+                                    <p class="text-gray-600 ">Mobile: +27 (81) 371-1015</p>
+                                    <p class="text-gray-600 ">Mail: bishopbuzana@gmail.com</p>
           </div>
         </li>
                             <li class="flex">
@@ -335,6 +335,7 @@
   </div>
 </footer>
 
-    <script src="./script.js"></script>  
+    <script src="./script.js">
+    </script>  
 </body>
 </html>

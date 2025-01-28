@@ -71,10 +71,10 @@
     
 
       <section  class="relative mt-1" >
-        <div  class=" grid  justify-center bg-white lg:grid-cols-3 sm:grid-cols-3  gap-2">
-         <div class="w-full h-auto rounded-2xl text-center  border-y-red-600 overflow-hidden">
+        <div  class=" grid  justify-center bg-white lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1  gap-2">
+         <div class="w-full h-auto p-3 text-center  border-y-red-600 overflow-hidden">
            <div class="w-full h-[80vh]">
-             <img class="w-full h-full object-cover" src="./images/Services-img-1.jpeg" alt="Services-1">
+             <img class="w-full rounded-lg h-full object-cover" src="./images/Services-img-1.jpeg" alt="Services-1">
            </div>
            <h1 class="font-bold mt-4 text-lg">RETAIL GUARDING</h1>
            <p class="mt-2 px-4 text-gray-600">
@@ -85,18 +85,18 @@
             <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
         
               <!-- Modal box -->
-              <div class="relative bg-white p-10 rounded w-2/3">
+              <div class="relative bg-transparent h-96 w-96 rounded">
                 <section>
-                  <div class="relative w-full bg-white h-64 overflow-hidden">
+                  <div class="relative w-full h-96 bg-transparent overflow-hidden">
                     <ul id="slider-1" class="transition-transform duration-300 ease-in-out">
                       <li class="h-[50vh] relative">
-                        <img class="h-full object-contain w-full p-2" src="./images/Services-img-1.jpeg" alt="Retail Image 1">
+                        <img class="h-full w-full object-cover  " src="./images/Services-img-1.jpeg" alt="Retail Image 1">
                       </li>
-                      <li class="h-[50vh] relative ">
-                        <img class="h-full object-contain w-full p-2" src="./images/Retail/R2.jpeg" alt="Slider Image 2">
+                      <li class="h-[50vh] relative hidden ">
+                        <img class=" object-cover  " src="./images/Retail/R2.jpeg" alt="Slider Image 2">
                       </li>
-                      <li class="h-[50vh] relative ">
-                        <img class="h-full object-contain w-full p-2" src="./images/Retail/R3.jpeg" alt="Retail Image 3">
+                      <li class="h-[50vh] relative hidden">
+                        <img class=" object-cover  " src="./images/Retail/R3.jpeg" alt="Retail Image 3">
                       </li>
                     </ul>
         
@@ -137,9 +137,9 @@
           </button>
          </div>
          
-         <div class="w-full h-auto rounded-2xl text-center   overflow-hidden">
+         <div class="w-full h-auto  text-center p-3  overflow-hidden">
            <div class="w-full h-[80vh]">
-             <img class="w-full h-full  object-contain overflow-hidden" src="./images/Services-img-2.jpeg" alt="Services-2">
+             <img class="w-full h-full rounded-lg object-cover overflow-hidden" src="./images/Services-img-2.jpeg" alt="Services-2">
            </div>
            <h1 class="font-bold mt-4 text-lg">PREMESIS AND SPECIAL EVENT GUARDING</h1>
            <p class="mt-2 px-4 text-gray-600">
@@ -150,18 +150,18 @@
             <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
         
               <!-- Modal box -->
-              <div class="relative bg-white p-10 rounded w-2/3">
+              <div class="relative bg-transparent h-96 w-96 rounded-lg">
                 <section>
-                  <div class="relative w-full bg-white h-64 overflow-hidden">
+                  <div class="relative    bg-transparent overflow-hidden">
                     <ul id="slider-2" class="transition-transform duration-300 ease-in-out">
-                      <li class="h-[50vh] relative">
-                        <img class="h-full object-contain w-full p-2" src="./images/Services-img-2.jpeg" alt="Premesis Image 1">
+                      <li class="relative h-[68vh]">
+                        <img class="object-cover  " src="./images/Services-img-2.jpeg" alt="Premesis Image 1">
                       </li>
-                      <li class="h-[50vh] relative hidden">
-                        <img class="h-full object-contain w-full p-2" src="./images/Premesis/P2.jpeg" alt="Premesis  Image 2">
+                      <li class=" relative hidden">
+                        <img class=" object-cover" src="./images/Premesis/P2.jpeg" alt="Premesis  Image 2">
                       </li>
-                      <li class="h-[50vh] relative hidden">
-                        <img class="h-full object-cover w-full p-2" src="./images/Premesis/P3.jpeg" alt="Premesis  Image 3">
+                      <li class=" relative hidden">
+                        <img class=" object-cover " src="./images/Premesis/P3.jpeg" alt="Premesis  Image 3">
                       </li>
                     </ul>
         
@@ -183,29 +183,29 @@
                 </section>
         
                 <!-- Modal overlay -->
-                <div id="Services-2" class="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center">
+                <div id="Services-2" class="absolute inset-0 bg-transparent bg-opacity-50 z-10 flex items-center justify-center">
                   <p class="text-white font-bold"><i>PREMESIS AND SPECIAL EVENT GUARDING</i></p>
                 </div>
         
                 <!-- Close button positioned below -->
-                <div class="w-full flex justify-center mt-4 ">
+                <div class="w-full flex justify-center ">
                   
-                  <button onclick="Closeserviceimg(2);" class="bg-red-300 text-white font-bold py-2 px-3 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg mb-3">
+                  <button onclick="Closeserviceimg(2);" class="bg-red-300 text-white font-bold py-2 px-3 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg mt-10">
                     Close
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          <button onclick="Showserviceimg(2);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">
+          <button onclick="Showserviceimg(2);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500   shadow-md hover:shadow-lg z-0">
             View More
           </button>
         
          </div>
  
-         <div class="w-full h-auto rounded-2xl text-center overflow-hidden">
+         <div class="w-full h-auto p-3 text-center overflow-hidden">
           <div class="w-full h-[80vh]">
-            <img class="w-full h-full object-cover" src="./images/Services-img-3.jpeg" alt="Services-3">
+            <img class="w-full h-full rounded-lg object-cover" src="./images/Services-img-3.jpeg" alt="Services-3">
           </div>
           <h1 class="font-bold mt-4 text-lg">CONSTRUCTION SITE CAMP GUARDING</h1>
           <p class="mt-2 px-4 text-gray-600">
@@ -226,18 +226,18 @@
             <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
         
               <!-- Modal box -->
-              <div class="relative bg-white p-10 rounded w-2/3">
+              <div class="relative bg-transparent w-96 h-96 rounded ">
                 <section>
-                  <div class="relative w-full bg-white h-64 overflow-hidden">
+                  <div class="relative w-full bg-white overflow-hidden">
                     <ul id="slider-3" class="transition-transform duration-300 ease-in-out">
-                      <li class="h-[50vh] relative">
-                        <img class="h-full object-contain w-full p-2" src="./images/Services-img-3.jpeg" alt="Cconstruction Image 1">
+                      <li class=" relative h-[65vh]">
+                        <img class="  object-cover " src="./images/Services-img-3.jpeg" alt="Cconstruction Image 1">
                       </li>
-                      <li class="h-[50vh] relative hidden">
-                        <img class="h-full object-contain w-full p-2" src="./images/Construction/C2.jpeg" alt="Cconstruction Image 2">
+                      <li class="relative hidden">
+                        <img class=" object-cover  " src="./images/Construction/C2.jpeg" alt="Cconstruction Image 2">
                       </li>
-                      <li class="h-[50vh] relative hidden">
-                        <img class="h-full object-contain w-full p-2" src="./images/Construction/C3.jpeg" alt=" Cconstruction Image 3">
+                      <li class="relative hidden">
+                        <img class=" object-cover w-full " src="./images/Construction/C3.jpeg" alt=" Cconstruction Image 3">
                       </li>
                     </ul>
         
@@ -259,12 +259,12 @@
                 </section>
         
                 <!-- Modal overlay -->
-                <div id="Services-3" class="absolute inset-0 bg-black bg-opacity-50 z-10 flex items-center justify-center">
+                <div id="Services-3" class="absolute inset-0 bg-transparent bg-opacity-50 z-10 flex items-center justify-center">
                   <p class="text-white font-bold"><i>CONSTRUCTION SITE CAMP GUARDING</i></p>
                 </div>
         
                 <!-- Close button positioned below -->
-                <div class="w-full flex justify-center mt-4 ">
+                <div class="w-full flex justify-center mt-10  ">
                   
                   <button onclick="Closeserviceimg(3);" class="bg-red-300 text-white font-bold py-2 px-3 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg mb-3">
                     Close
@@ -274,15 +274,72 @@
             </div>
           </div>
 
-          <button onclick="Showserviceimg(3);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">
+          <button onclick="Showserviceimg(3);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5  rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">
             View More
           </button>
         </div>
         
-         
+        <div class="w-full h-auto  text-center p-3  overflow-hidden">
+          <div class="w-full h-[80vh]">
+            <img class="w-full h-full rounded-lg object-cover overflow-hidden" src="./images/K-9.jpg" alt="Services-4">
+          </div>
+          <h1 class="font-bold mt-4 text-lg">DOG HANDLING (K9)</h1>
+          <p class="mt-2 px-4 text-gray-600">At Oumbish Security, we offer highly specialized and professional K9 Dog Handling Services to enhance the safety and security of your premises. Our trained and skilled K9 teams are a powerful addition to any security plan, providing an unmatched level of vigilance and deterrence.
+          </p>
           
+         <div id="modal-wrapper-4" class="fixed z-30 inset-0 hidden">
+           <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
+       
+             <!-- Modal box -->
+             <div class="relative bg-transparent h-96 w-96 rounded-lg">
+               <section>
+                 <div class="relative    bg-transparent overflow-hidden">
+                   <ul id="slider-2" class="transition-transform duration-300 ease-in-out">
+                     <li class="relative h-[68vh]">
+                       <img class="object-cover  " src="./images/K-9.jpg" alt="K9 Image 1">
+                     </li>
+                     
+                   </ul>
+       
+                   <div class="absolute flex h-full w-full top-0 left-0">
+                     <div class="my-auto px-5 w-full flex justify-between">
+                       <button onclick="prev(4);" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                         </svg>
+                       </button>
+                       <button onclick="next(4)" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                         </svg>
+                       </button>
+                     </div>
+                   </div>
+                 </div>
+               </section>
+       
+               <!-- Modal overlay -->
+               <div id="Services-4" class="absolute inset-0 bg-transparent bg-opacity-50 z-10 flex items-center justify-center">
+                 <p class="text-white font-bold"><i>DOH HANDLING (K9)</i></p>
+               </div>
+       
+               <!-- Close button positioned below -->
+               <div class="w-full flex justify-center ">
+                 
+                 <button onclick="Closeserviceimg(4);" class="bg-red-300 text-white font-bold py-2 px-3 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg mt-10">
+                   Close
+                 </button>
+               </div>
+             </div>
+           </div>
          </div>
+         <button onclick="Showserviceimg(4);" class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500   shadow-md hover:shadow-lg z-0">
+           View More
+         </button>
+       
         </div>
+
+      
        </section>
       
        <!--Installation of devices section-->
@@ -368,7 +425,7 @@
 
 <footer class="bg-red-600 rounded-lg shadow m-4 ">
   <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-white sm:text-center dark:text-gray-400">© 2025 <a href="https://OumbishSecurity.com/" class="hover:underline">Oumbish Security™</a>. All Rights Reserved.
+    <span class="text-sm text-white sm:text-center ">© 2025 <a href="https://OumbishSecurity.com/" class="hover:underline">Oumbish Security™</a>. All Rights Reserved.
   </span>
   <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-white  sm:mt-0 gap-4" >
       <li>

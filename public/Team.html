@@ -218,29 +218,6 @@
 
   const images = document.querySelectorAll('.resize-image');
 
-// Add hover and click effects with JavaScript
-images.forEach((img) => {
-  // Add hover effect
-  img.addEventListener('mouseenter', () => {
-    img.style.transform = 'scale(1.1)'; // Slightly enlarge on hover
-    img.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)'; // Add shadow
-  });
-
-  // Remove hover effect
-  img.addEventListener('mouseleave', () => {
-    img.style.transform = 'scale(1)'; // Reset size
-    img.style.boxShadow = 'none'; // Remove shadow
-  });
-
-  // Add click effect
-  img.addEventListener('click', () => {
-    img.style.transform = 'scale(0.95)'; // Shrink slightly on click
-    img.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)'; // Adjust shadow
-    setTimeout(() => {
-      img.style.transform = 'scale(1.1)'; // Return to hover state
-    }, 150); // Delay for click effect
-  });
-});
     </script>  
 </body>
 </html>
