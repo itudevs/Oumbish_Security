@@ -21,7 +21,7 @@
                 <!--
                   Icon when menu is closed.
       
-                  Menu open: "hidden", Menu closed: "block"
+                  Menu open: "hidden", Menu closed: "block"                  find . -type f -name "*.html" -exec sed -i 's/index.html/Home.html/g' {} +                  find . -type f -name "*.html" -exec sed -i 's/index.html/Home.html/g' {} +
                 -->
                 <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -38,12 +38,12 @@
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div class="flex shrink-0 items-center">
-                <a href="index.html"><img class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Oumbish Security"></a>
+                <a href="./Home.html"><img class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Oumbish Security"></a>
               </div>
               <div  class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="./index.html" class="rounded-md hover:bg-black px-3 py-2 text-sm font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
+                  <a href="./Home.html" class="rounded-md hover:bg-black px-3 py-2 text-sm font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
                   <a href="./About.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-black hover:text-white">About</a>
                   <a href="./Services.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-black hover:text-white">Services</a>
                   <a href="./Team.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-black hover:text-white">Team</a>
@@ -58,7 +58,7 @@
         <div class="sm:hidden hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="./index.html" class="block rounded-md hover:bg-black px-3 py-2 text-base font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
+            <a href="./Home.html" class="block rounded-md hover:bg-black px-3 py-2 text-base font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
             <a href="./About.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-black hover:text-white">About</a>
             <a href="./Services.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-black hover:text-white">Services</a>
             <a href="./Team.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-black hover:text-white">Team</a>
@@ -308,7 +308,7 @@
           <a href="./About.html" class="hover:underline me-4 md:me-6">About</a>
       </li>
       <li>
-          <a href="/public/Services.html" class="hover:underline me-4 md:me-6">Services</a>
+          <a href="./Services.html" class="hover:underline me-4 md:me-6">Services</a>
       </li>
       <li>
           <a href="./Team.html" class="hover:underline me-4 md:me-6">Team</a>
