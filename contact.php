@@ -73,10 +73,10 @@ try {
     // Server settings
     $mail->isSMTP();
     $mail->SMTPDebug = 0;
-    $mail->Host = getenv('SMTP_HOST') ?: 'mail.ausitttfuneralservices.co.za';
+    $mail->Host = getenv('SMTP_HOST') ?: 'mail.example.co.za';
     $mail->SMTPAuth = true;
-    $mail->Username = getenv('SMTP_USERNAME') ?: 'info@ausitttfuneralservices.co.za';
-    $mail->Password = getenv('SMTP_PASSWORD') ?: 'MGH@infoAUSI2026';
+    $mail->Username = getenv('SMTP_USERNAME') ?: 'info';
+    $mail->Password = getenv('SMTP_PASSWORD') ?: 'none';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = getenv('SMTP_PORT') ?: 465;
     $mail->Timeout = 30;
