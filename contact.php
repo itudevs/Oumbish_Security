@@ -4,6 +4,19 @@ ob_start();
 
 session_start();
 
+// Load environment variables from .env file
+if (file_exists(__DIR__ . '/.env')) {
+    $envFile = file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($envFile as $line) {
+        if (strpos(trim($line), '#') === 0) {
+            continue; // Skip comments
+        }
+        list($key, $value) = explode('=', $line, 2);
+        $_ENV[trim($key)] = trim($value);
+        putenv(trim($key) . '=' . trim($value));
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die('Invalid request method');
 }
@@ -60,12 +73,12 @@ try {
     // Server settings
     $mail->isSMTP();
     $mail->SMTPDebug = 0;
-    $mail->Host = 'mail.ausitttfuneralservices.co.za';
+    $mail->Host = getenv('SMTP_HOST') ?: 'mail.ausitttfuneralservices.co.za';
     $mail->SMTPAuth = true;
-    $mail->Username = 'info@ausitttfuneralservices.co.za';
-    $mail->Password = 'MGH@infoAUSI2026';
+    $mail->Username = getenv('SMTP_USERNAME') ?: 'info@ausitttfuneralservices.co.za';
+    $mail->Password = getenv('SMTP_PASSWORD') ?: 'MGH@infoAUSI2026';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = 465;
+    $mail->Port = getenv('SMTP_PORT') ?: 465;
     $mail->Timeout = 30;
     $mail->SMTPKeepAlive = true;
     
@@ -76,9 +89,9 @@ try {
     $mail->Priority = 3;
     
     // Critical headers
-    $mail->setFrom('info@ausitttfuneralservices.co.za', 'AUSI Website');
-    $mail->addAddress('info@ausitttfuneralservices.co.za');
-    $mail->addReplyTo('info@ausitttfuneralservices.co.za', $name);
+    $mail->setFrom(getenv('SMTP_FROM_EMAIL') ?: 'info@ausitttfuneralservices.co.za', getenv('SMTP_FROM_NAME') ?: 'AUSI Website');
+    $mail->addAddress(getenv('SMTP_TO_EMAIL') ?: 'info@ausitttfuneralservices.co.za');
+    $mail->addReplyTo(getenv('SMTP_REPLY_TO_EMAIL') ?: 'info@ausitttfuneralservices.co.za', $name);
     
     // Add headers to look more legitimate
     $mail->addCustomHeader('X-Mailer-Type', 'Contact Form');
