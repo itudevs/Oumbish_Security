@@ -38,12 +38,12 @@
             </div>
             <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div class="flex shrink-0 items-center">
-                <a href="./Home.html"><img id="main-logo"class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Oumbish Security"></a>
+                <a href="./index.html"><img id="main-logo"class="h-12 w-auto rounded-full object-cover flex-gap-7  " src="./images/Logo-nav.jpeg"  alt="Oumbish Security"></a>
               </div>
               <div  class="hidden sm:ml-6 sm:block">
                 <div class="flex space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="./Home.html" class="rounded-md hover:bg-black px-3 py-2 text-sm font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
+                  <a href="./index.html" class="rounded-md hover:bg-black px-3 py-2 text-sm font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
                   <a href="./About.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-black hover:text-white">About</a>
                   <a href="./Services.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-black hover:text-white">Services</a>
                   <a href="./Team.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-black hover:text-white">Team</a>
@@ -62,7 +62,7 @@
         <div class="sm:hidden hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="./Home.html" class="block rounded-md hover:bg-black px-3 py-2 text-base font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
+            <a href="./index.html" class="block rounded-md hover:bg-black px-3 py-2 text-base font-medium hover:text-white text-gray-300" aria-current="page">Home</a>
             <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-black hover:text-white">About</a>
             <a href="./Services.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-black hover:text-white">Services</a>
             <a href="./Team.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-black hover:text-white">Team</a>
@@ -414,7 +414,7 @@
                 </div>
             </div>
             <div class="flex justify-center items-center">
-              <a href="Home.html#contact">
+              <a href="ContactUs.html">
                 <button   class="bg-red-300 opacity-35 text-white font-bold py-2 px-3 my-5 rounded-sm hover:bg-red-500 shadow-md hover:shadow-lg z-0">Contact</button>
               </a> 
             </div>
@@ -427,7 +427,7 @@
 
 <footer class="bg-red-600 rounded-lg shadow m-4 ">
   <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-white sm:text-center ">© 2025 <a href="https://OumbishSecurity.com/" class="hover:underline">Oumbish Security™</a>. All Rights Reserved.
+    <span class="text-sm text-white sm:text-center ">&copy; <span id="currentYear"></span> <a href="https://OumbishSecurity.com/" class="hover:underline">Oumbish Security™</a>. All Rights Reserved. Developed by <a href="https://www.sidev.co.za" class="hover:underline" target="_blank">Sidev</a>.
   </span>
   <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-white  sm:mt-0 gap-4" >
       <li>
@@ -438,6 +438,9 @@
       </li>
       <li>
           <a href="./Team.html" class="hover:underline me-4 md:me-6">Team</a>
+      </li>
+      <li>
+          <a href="./ContactUs.html" class="hover:underline me-4 md:me-6">Contact</a>
       </li>
       <li>
         <a href="https://www.instagram.com/oumbish_security/" target="_blank" class="text-white hover:text-gray-900 ">
@@ -461,6 +464,9 @@
   </div>
 </footer>
 
-    <script src="./script(S).js"></script>  
+    <script src="./script(S).js"></script>
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

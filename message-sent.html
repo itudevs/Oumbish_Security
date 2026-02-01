@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Team</title>
+    <title>Message Sent - Oumbish Security</title>
     <link rel="stylesheet" href="./style.css" />
     <link
       class="object-cover"
       rel="shortcut icon"
-      type="x-icon"
+      type="image/jpeg"
       href="./images/web-logo.jpeg"
     />
+    <!-- Keep Tailwind CDN to ensure utility classes used here render even if not in compiled CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <!--Nav bar component from tailwind csss with few edits for this site-->
+  <body class="bg-white">
+    <!--Nav bar (same structure as other pages) -->
     <nav class="bg-['/images/Logo-nav.jpeg']">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <!-- Mobile menu button-->
             <button
               onclick="CloseMenu()"
               type="button"
@@ -29,11 +29,6 @@
             >
               <span class="absolute -inset-0.5"></span>
               <span class="sr-only">Open main menu</span>
-              <!--
-                  Icon when menu is closed.
-      
-                  Menu open: "hidden", Menu closed: "block"
-                -->
               <svg
                 class="block size-6"
                 fill="none"
@@ -49,11 +44,6 @@
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
-              <!--
-                  Icon when menu is open.
-      
-                  Menu open: "block", Menu closed: "hidden"
-                -->
               <svg
                 class="hidden size-6"
                 fill="none"
@@ -84,11 +74,9 @@
             </div>
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a
-                  href="./Home.html"
-                  class="rounded-md hover:bg-black px-3 py-2 text-sm font-medium hover:text-white text-gray-300"
-                  aria-current="page"
+                  href="./index.html"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-black hover:text-white"
                   >Home</a
                 >
                 <a
@@ -116,15 +104,11 @@
           </div>
         </div>
       </div>
-
-      <!-- Mobile menu, show/hide based on menu state. -->
       <div class="sm:hidden hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
           <a
             href="./index.html"
-            class="block rounded-md hover:bg-black px-3 py-2 text-base font-medium hover:text-white text-gray-300"
-            aria-current="page"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-black hover:text-white"
             >Home</a
           >
           <a
@@ -151,78 +135,130 @@
       </div>
     </nav>
 
-    <!--About us section-->
-    <section class="mt-8 p-4 min-h-screen w-full rounded-lg">
-      <!--Divide it into two sides -->
-      <div
-        class="grid rounded-lg sm:grid-cols-1 md:grid-cols-2 gap-9 min-h-screen hover:shadow-gray-950"
-      >
-        <div class="w-full grid grid-cols-2 gap-6 rounded-lg">
-          <div class="">
-            <img
-              class="h-[50vh] hover:shadow-2xl hover:shadow-gray-800 w-full object-cover rounded-lg"
-              src="images/Services-img-3.jpeg"
-              alt="About image 1"
-            />
-          </div>
-          <div class="">
-            <img
-              class="h-[50vh] hover:shadow-2xl hover:shadow-gray-800 w-full object-cover rounded-lg"
-              src="images/Slider-img-4.jpeg"
-              alt="About image 2"
-            />
-          </div>
-          <div class="">
-            <img
-              class="h-[50vh] hover:shadow-2xl hover:shadow-gray-800 w-full object-cover rounded-lg"
-              src="images/Services-img-2.jpeg"
-              alt="About image 3"
-            />
-          </div>
-          <div class="">
-            <img
-              class="h-[50vh] hover:shadow-2xl hover:shadow-gray-800 w-full object-cover rounded-lg"
-              src="images/Team/T6.jpeg"
-              alt="About image 4"
-            />
+    <!-- Message Sent Success Section -->
+    <section
+      class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="max-w-md w-full space-y-8 text-center">
+        <!-- Success Icon -->
+        <div class="flex justify-center">
+          <div class="rounded-full bg-green-100 p-6">
+            <svg
+              class="h-16 w-16 text-green-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
           </div>
         </div>
 
-        <!--The two sections-->
-        <div class="w-full flex flex-col justify-center items-center">
-          <h1
-            class="font-bold border rounded-lg text-3xl flex justify-center items-center mb-6"
-          >
-            About us
+        <!-- Success Message -->
+        <div>
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">
+            Message Sent Successfully!
           </h1>
-          <p
-            class="p-4 bg-red-400 rounded-xl text-white pr-10 font-semibold text-sm leading-10 flex mb-10"
-          >
-            At Oumbish Security, we prioritize your safety and peace of mind
-            above all else. Founded on the principles of trust, reliability, and
-            excellence, we are committed to providing cutting-edge security
-            solutions tailored to meet the unique needs of our clients. Whether
-            you're a business seeking advanced protection, a homeowner looking
-            for peace of mind, or an event organizer in need of top-notch
-            security personnel, Oumbish Security has you covered. With a team of
-            experienced professionals and state-of-the-art technology, we ensure
-            that every aspect of your security is handled with the highest level
-            of attention and care. Our mission is simple: to protect what
-            matters most to you. Choose Oumbish Security for a secure future,
-            today.
+          <p class="text-lg text-gray-600 mb-2">
+            Thank you for contacting Oumbish Security.
           </p>
-          <a href="ContactUs.html">
+          <p class="text-base text-gray-500">
+            We have received your message and will get back to you as soon as
+            possible.
+          </p>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+          <h2 class="text-xl font-semibold text-gray-800 mb-3">
+            What happens next?
+          </h2>
+          <ul class="text-left text-gray-600 space-y-2">
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-red-500 mr-2 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Our team will review your message within 24 hours</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-red-500 mr-2 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>You'll receive a response via email or phone</span>
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="h-6 w-6 text-red-500 mr-2 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>For urgent matters, please call us directly</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <a href="./index.html">
             <button
-              class="bg-red-300 mt-11 text-white z-0 opacity-35 font-semibold py-2 px-3 my-5 shadow-MD rounded-md hover:bg-red-500 hover:shadow-lg"
+              class="bg-red-600 text-white font-semibold py-3 px-6 rounded-md hover:bg-red-700 hover:shadow-lg transition duration-300 w-full sm:w-auto"
             >
-              Find Out More
+              Return to Home
             </button>
           </a>
+          <a href="./Services.html">
+            <button
+              class="bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-md hover:bg-gray-300 hover:shadow-lg transition duration-300 w-full sm:w-auto"
+            >
+              View Our Services
+            </button>
+          </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mt-8 pt-8 border-t border-gray-200">
+          <p class="text-sm text-gray-500">Need immediate assistance?</p>
+          <p class="text-lg font-semibold text-gray-800 mt-2">
+            Call us at:
+            <a
+              href="tel:+27 (81) 371-1015"
+              class="text-red-600 hover:text-red-700"
+              >+27 (81) 371-1015</a
+            >
+          </p>
         </div>
       </div>
     </section>
 
-    <!--Footer-->
+    <!-- Footer (same as other pages) -->
     <footer class="bg-red-600 rounded-lg shadow m-4">
       <div
         class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
@@ -237,28 +273,18 @@
             class="hover:underline"
             target="_blank"
             >Sidev</a
-          >.
-        </span>
+          >.</span
+        >
         <ul
           class="flex flex-wrap items-center mt-3 text-sm font-medium text-white sm:mt-0 gap-4"
         >
+          <li><a href="./About.html" class="hover:underline">About</a></li>
           <li>
-            <a href="./About.html" class="hover:underline me-4 md:me-6"
-              >About</a
-            >
+            <a href="./Services.html" class="hover:underline">Services</a>
           </li>
+          <li><a href="./Team.html" class="hover:underline">Team</a></li>
           <li>
-            <a href="./Services.html" class="hover:underline me-4 md:me-6"
-              >Services</a
-            >
-          </li>
-          <li>
-            <a href="./Team.html" class="hover:underline me-4 md:me-6">Team</a>
-          </li>
-          <li>
-            <a href="./ContactUs.html" class="hover:underline me-4 md:me-6"
-              >Contact</a
-            >
+            <a href="./ContactUs.html" class="hover:underline">Contact</a>
           </li>
           <li>
             <a
@@ -304,10 +330,24 @@
       </div>
     </footer>
 
-    <script src="./script(S).js"></script>
+    <script src="./script.js"></script>
     <script>
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
+    </script>
+    <script>
+      // Prevent direct access - redirect to contact page if not coming from form submission
+      (function () {
+        const formSubmitted = sessionStorage.getItem("formSubmitted");
+
+        if (!formSubmitted || formSubmitted !== "true") {
+          // Redirect to contact page if trying to access directly
+          window.location.href = "./ContactUs.html";
+        } else {
+          // Clear the flag so page can't be refreshed
+          sessionStorage.removeItem("formSubmitted");
+        }
+      })();
     </script>
   </body>
 </html>
