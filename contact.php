@@ -15,6 +15,14 @@ if (file_exists(__DIR__ . '/.env')) {
         $_ENV[trim($key)] = trim($value);
         putenv(trim($key) . '=' . trim($value));
     }
+    error_log("SUCCESS: .env file loaded from " . __DIR__ . "/.env");
+    error_log("ENV CHECK - SMTP_HOST: " . (getenv('SMTP_HOST') ? 'SET' : 'NOT SET'));
+    error_log("ENV CHECK - SMTP_USERNAME: " . (getenv('SMTP_USERNAME') ? 'SET' : 'NOT SET'));
+    error_log("ENV CHECK - SMTP_PASSWORD: " . (getenv('SMTP_PASSWORD') ? 'SET' : 'NOT SET'));
+    error_log("ENV CHECK - SMTP_PORT: " . (getenv('SMTP_PORT') ? getenv('SMTP_PORT') : 'NOT SET'));
+} else {
+    error_log("ERROR: .env file NOT FOUND at " . __DIR__ . "/.env");
+    error_log("DIRECTORY CONTENTS: " . implode(', ', scandir(__DIR__)));
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -72,7 +80,10 @@ try {
     
     // Server settings
     $mail->isSMTP();
-    $mail->SMTPDebug = 0;
+    $mail->SMTPDebug = 2; // Enable verbose debug output (0=off, 1=client, 2=client+server, 3=detailed, 4=low-level)
+    $mail->Debugoutput = function($str, $level) {
+        error_log("SMTP Debug (Level $level): $str");
+    };
     $mail->Host = getenv('SMTP_HOST') ?: 'mail.example.co.za';
     $mail->SMTPAuth = true;
     $mail->Username = getenv('SMTP_USERNAME') ?: 'info';
@@ -209,11 +220,69 @@ try {
     // Clear buffer for error page too
     ob_end_clean();
     
-    error_log("FAILED: " . $mail->ErrorInfo . " | Exception: " . $e->getMessage());
+    // Comprehensive error logging for debugging
+    $error_details = [
+        'timestamp' => date('Y-m-d H:i:s'),
+        'exception_message' => $e->getMessage(),
+        'phpmailer_error' => $mail->ErrorInfo,
+        'smtp_host' => getenv('SMTP_HOST') ?: 'NOT SET',
+        'smtp_port' => getenv('SMTP_PORT') ?: 'NOT SET',
+        'smtp_username' => getenv('SMTP_USERNAME') ? 'SET' : 'NOT SET',
+        'smtp_password' => getenv('SMTP_PASSWORD') ? 'SET (length: ' . strlen(getenv('SMTP_PASSWORD')) . ')' : 'NOT SET',
+        'from_email' => getenv('SMTP_FROM_EMAIL') ?: 'NOT SET',
+        'to_email' => getenv('SMTP_TO_EMAIL') ?: 'NOT SET',
+        'env_file_exists' => file_exists(__DIR__ . '/.env') ? 'YES' : 'NO',
+        'php_version' => PHP_VERSION,
+        'openssl_enabled' => extension_loaded('openssl') ? 'YES' : 'NO',
+        'client_ip' => $_SERVER['REMOTE_ADDR'] ?? 'UNKNOWN',
+        'user_email' => $email ?? 'N/A',
+        'user_name' => $name ?? 'N/A'
+    ];
+    
+    // Log detailed error
+    $log_message = "EMAIL SEND FAILED\n" . str_repeat("=", 60) . "\n";
+    foreach ($error_details as $key => $value) {
+        $log_message .= strtoupper(str_replace('_', ' ', $key)) . ": " . $value . "\n";
+    }
+    $log_message .= str_repeat("=", 60);
+    
+    error_log($log_message);
+    
+    // Create detailed error message for client (sanitized)
+    $client_error = "Failed to send message. ";
+    
+    // Add specific debugging info
+    if (!file_exists(__DIR__ . '/.env')) {
+        $client_error .= ".env file not found on server. ";
+    }
+    
+    if (!getenv('SMTP_HOST') || getenv('SMTP_HOST') === 'mail.example.co.za') {
+        $client_error .= "SMTP_HOST not configured properly. ";
+    }
+    
+    if (!getenv('SMTP_USERNAME') || getenv('SMTP_USERNAME') === 'info') {
+        $client_error .= "SMTP_USERNAME not configured. ";
+    }
+    
+    if (!getenv('SMTP_PASSWORD') || getenv('SMTP_PASSWORD') === 'none') {
+        $client_error .= "SMTP_PASSWORD not configured. ";
+    }
+    
+    if (!extension_loaded('openssl')) {
+        $client_error .= "OpenSSL extension not loaded. ";
+    }
+    
+    // Add PHPMailer specific error
+    if ($mail->ErrorInfo) {
+        $client_error .= "SMTP Error: " . $mail->ErrorInfo . " ";
+    }
+    
+    // Add exception message
+    $client_error .= "Exception: " . $e->getMessage();
     
     // Return error message for JavaScript to display
     http_response_code(400);
-    echo htmlspecialchars($e->getMessage());
+    echo htmlspecialchars($client_error);
     exit();
 }
 ?>

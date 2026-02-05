@@ -113,17 +113,21 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         })
         .catch((error) => {
-          // Show error message
+          // Show detailed error message
           const errorDiv = document.createElement("div");
           errorDiv.className =
-            "fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded shadow-lg z-50";
-          errorDiv.textContent = "Error: " + error.message;
+            "fixed top-4 right-4 bg-red-500 text-white px-6 py-4 rounded shadow-lg z-50 max-w-md";
+          errorDiv.innerHTML = `
+            <div class="font-bold mb-2">⚠️ Message Failed to Send</div>
+            <div class="text-sm mb-2">${error.message}</div>
+            <div class="text-xs mt-2 opacity-90">Check browser console for details</div>
+          `;
           document.body.appendChild(errorDiv);
 
-          // Remove error message after 5 seconds
+          // Remove error message after 10 seconds (increased for reading time)
           setTimeout(() => {
             errorDiv.remove();
-          }, 5000);
+          }, 10000);
 
           // Re-enable submit button
           if (submitButton) {
@@ -131,7 +135,19 @@ document.addEventListener("DOMContentLoaded", function () {
             submitButton.textContent = originalButtonText;
           }
 
-          console.error("Form submission error:", error);
+          // Detailed console logging for debugging
+          console.error("=".repeat(60));
+          console.error("CONTACT FORM SUBMISSION FAILED");
+          console.error("=".repeat(60));
+          console.error("Error Message:", error.message);
+          console.error("Timestamp:", new Date().toISOString());
+          console.error("Form Data:", {
+            name: formFields.name.value,
+            email: formFields.email.value,
+            subject: formFields.subject.value,
+            message_length: formFields.message.value.length,
+          });
+          console.error("=".repeat(60));
         });
     }
   });
